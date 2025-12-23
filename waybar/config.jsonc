@@ -1,0 +1,111 @@
+
+{
+    "modules-left": [
+        "custom/power",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+        "network",
+        "bluetooth",
+        "battery",
+        "backlight",
+        "pulseaudio"
+    ],
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "●",
+        "format-icons": {
+            "active": "●"
+        },
+        "cursor": true
+    },
+    "bluetooth": {
+        "format": "{icon}",
+        "format-disabled": "󰂲",
+        "format-on": "󰂯",
+        "format-connected": "󰂱",
+        "tooltip": true,
+        "on-click": "blueman-manager & sleep 1 && pkill blueman-tray"
+    },
+    "network": {
+        "format-wifi": "{signalStrength}%",
+        "format-ethernet": "󰈀 Ethernet",
+        "format-linked": "󰖪 Linked",
+        "format-disconnected": "󰤭 Disconnected",
+        "tooltip": false,
+        "on-click": "nm-connection-editor"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon}{capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-alt": "{icon}{capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "tooltip-format": "{time}",
+        "interval": 30,
+        "cursor": false
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "",
+            ""
+        ]
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " {volume}%",
+        "format-bluetooth": "󰂯{volume}%",
+        "format-bluetooth-muted": " {volume}%",
+        "format-icons": {
+            "headphone": "",
+            "headset": "",
+            "default": [
+                ""
+            ]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "tray": {
+        "icon-size": 15.9,
+        "spacing": 6,
+        "cursor": true
+    },
+    "custom/power": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch exit"
+    },
+    "clock": {
+        "format": "{:%a %d/%m/%Y ~ %H:%M}",
+        "tooltip-format": "<span size='11000' font-family='Awaita Mono' line_height='1'><tt>{calendar}</tt></span>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<span color='#777777'>{}</span>",
+                "weekdays": "<span color='#999999'>{}</span>",
+                "days": "<span color='#555555'>{}</span>",
+                "today": "<span color='#FFFFFF'>{}</span>"
+            }
+        },
+        "on-click": "swaync-client -t -sw"
+    }
+}

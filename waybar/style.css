@@ -1,0 +1,122 @@
+
+
+/* @import "$HOME/.config/colors/colors.css" */
+@import "./colors/colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window,
+tooltip {
+    background-color: alpha(@background, 0.7);
+    border-radius: 1px;
+}
+
+#waybar {
+    background: alpha(@background, 0);
+    border-radius: 0;
+}
+
+#workspaces {
+    margin: 1px 0;
+}
+
+#workspaces button {
+    color: @gray-mid;
+    border: none;
+    min-width: 18px;
+    min-height: 18px;
+    padding: 3px;
+    border-radius: 50%;
+}
+
+#workspaces button:hover {
+    color: @gray-light;
+    transition: none;
+    border-bottom: 0px solid @gray-light;
+    border-radius: 50%;
+}
+
+#workspaces button.active {
+    color: @foreground;        /* bright white */
+    border: 0px solid @foreground;
+    border-radius: 50%;
+}
+
+#workspaces button.urgent {
+    background-color: @gray-dark;
+    color: @foreground;
+    border-radius: 50%;
+}
+
+#custom-power,
+#bluetooth,
+#network,
+#battery,
+#pulseaudio,
+#clock {
+    padding: 0 1px;
+}
+
+#bluetooth {
+    font-size: 15px;
+    min-width: 17px;
+    color: @gray-light;
+}
+
+#network {
+    margin-left: 3px;
+    margin-right: 3px;
+    color: @gray-light;
+}
+
+#battery {
+    margin-left: 3px;
+    margin-right: 3px;
+    color: @gray-light;
+}
+
+#pulseaudio {
+    margin-left: 3px;
+    margin-right: 6px;
+    color: @gray-light;
+}
+
+#clock {
+    margin-right: 5px;
+    color: @gray-light;
+}
+
+#custom-power {
+    padding: 0px 0px 0px 10px;
+    color: @gray-mid;
+}
+
+#backlight {
+    margin-right: 3px;
+    margin-left: 3px;
+    transition: none;
+    color: @gray-light;
+    transition: 0.3s;
+}
+
+#tray {
+    padding-right: 1px;
+    color: @gray-light;
+}
+
+
+/* Minimal thin border around all modules */
+#waybar > * {
+    border: 1px solid rgba(200, 200, 200, 0.15);
+    border-radius: 1px;
+    padding: 1px 2px;
+    margin-top: 1px;
+    margin-right: 1px;
+    margin-left: 1px;
+    background-color: rgba(0, 0, 0, 0.8); 
+}
